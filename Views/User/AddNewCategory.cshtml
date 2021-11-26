@@ -1,0 +1,25 @@
+﻿@using ProjectMovie.Models
+@model UserIntelModel
+
+
+@{
+    ViewBag.Title = "AddNewCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddNewCategory</h2>
+
+
+@using (Html.BeginForm("AddNewCategory", "User", FormMethod.Post))
+{
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Movie Name</label>
+        @Html.TextBox("MovieName", null, null, new { @class = "form-control" })
+        <div id="emailHelp" class="form-text">The movie that you're adding a category.</div>
+        <label for="exampleInputEmail1" class="form-label">Category Name</label>
+        @Html.TextBox("Category", null, null, new { @class = "form-control" })
+    </div>
+    @Html.Hidden("Username")
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+}
